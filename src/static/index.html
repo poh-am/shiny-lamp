@@ -10,7 +10,37 @@
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
+      <div class="user-menu">
+        <button id="login-btn" class="icon-btn" title="Teacher Login">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+        <span id="user-status" class="hidden"></span>
+        <button id="logout-btn" class="hidden">Logout</button>
+      </div>
     </header>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div id="login-error" class="error hidden"></div>
+      </div>
+    </div>
 
     <main>
       <section id="activities-container">
@@ -23,6 +53,7 @@
 
       <section id="signup-container">
         <h3>Sign Up for an Activity</h3>
+        <p class="teacher-only-notice">Only teachers can register students. Please log in.</p>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
